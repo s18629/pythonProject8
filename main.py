@@ -1,11 +1,12 @@
 import gym
 import random
 
-#Klasa agenta
+
+# Klasa agenta
 class Agent():
     def __init__(self, env):
         self.action_size = env.action_space.n
-        self.policy = [1/self.action_size]*self.action_size
+        self.policy = [1 / self.action_size] * self.action_size
         self.learning_rate = 1.7
         self.discount_factor = 0.99
 
@@ -23,8 +24,9 @@ class Agent():
         # metoda pomocnicza do obliczania wartości Q
         return self.policy[action]
 
+
 # inicjalizacja środowiska i agenta
-env = gym.make('CartPole-v1', render_mode = "human")
+env = gym.make('CartPole-v1', render_mode="human")
 
 agent = Agent(env)
 
